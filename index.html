@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Discord Clone</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="app">
+    <aside class="leftbar">
+      <div class="logo">DC</div>
+      <div class="rooms" id="roomsList"></div>
+      <button id="createRoomBtn" class="small">+ Create Room</button>
+    </aside>
+
+    <section class="channels">
+      <header class="channel-header">
+        <div id="channelTitle"># general</div>
+        <div class="header-actions">
+          <span id="usernameDisplay"></span>
+        </div>
+      </header>
+
+      <div class="messages" id="messages"></div>
+
+      <div class="composer">
+        <input id="messageInput" placeholder="Message #general" />
+        <button id="sendBtn">Send</button>
+      </div>
+    </section>
+
+    <aside class="rightbar">
+      <div class="section-title">Members</div>
+      <div id="usersList"></div>
+    </aside>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="modalTitle">Modal</h3>
+      <input id="modalInput" />
+      <div class="modal-actions">
+        <button id="modalCancel" class="small">Cancel</button>
+        <button id="modalOk" class="small primary">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
