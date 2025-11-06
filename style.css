@@ -1,0 +1,55 @@
+/* style.css - clean, minimal Discord-like layout */
+:root{
+  --bg:#0f1720;
+  --sidebar:#0b1220;
+  --panel:#0d1116;
+  --muted:#9aa4b2;
+  --accent:#5865f2;
+  --msg-bg:#101419;
+}
+
+*{box-sizing:border-box}
+html,body,#app{height:100%;margin:0;font-family:Inter,Segoe UI,Arial;background:var(--bg);color:#e6eef6}
+#app{display:flex;align-items:stretch}
+
+/* left sidebar */
+.leftbar{
+  width:72px;background:linear-gradient(180deg,var(--sidebar),#07101a);
+  padding:10px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.logo{
+  width:48px;height:48px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;margin-bottom:6px;
+}
+.rooms{flex:1;overflow:auto;width:100%}
+.room-btn{
+  width:48px;height:48px;border-radius:12px;background:#0e1620;margin:6px auto;display:flex;align-items:center;justify-content:center;color:var(--muted);cursor:pointer;border:2px solid transparent;
+}
+.room-btn.active{border-color:var(--accent);background:linear-gradient(180deg,#13203a,#0b1525);color:white}
+.small{padding:6px 8px;border-radius:8px;border:none;background:#16202b;color:white;cursor:pointer}
+
+/* channels & messages */
+.channels{flex:1;display:flex;flex-direction:column;border-left:1px solid rgba(255,255,255,0.03);border-right:1px solid rgba(255,255,255,0.03)}
+.channel-header{height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:var(--panel);border-bottom:1px solid rgba(255,255,255,0.02)}
+.channel-header .header-actions{display:flex;gap:12px;align-items:center}
+.messages{flex:1;padding:16px;overflow:auto;background:linear-gradient(180deg,#081018,#071018);display:flex;flex-direction:column;gap:10px}
+.message{background:var(--msg-bg);padding:10px;border-radius:8px;max-width:70%}
+.message .meta{font-size:12px;color:var(--muted);margin-bottom:6px}
+.message .text{white-space:pre-wrap}
+
+/* composer */
+.composer{height:64px;display:flex;padding:10px;gap:10px;border-top:1px solid rgba(255,255,255,0.02);background:var(--panel)}
+.composer input{flex:1;padding:10px;border-radius:8px;border:none;background:#0b1520;color:white}
+.composer button{padding:10px 12px;border-radius:8px;border:none;background:var(--accent);color:white}
+
+/* rightbar */
+.rightbar{width:220px;padding:12px;background:linear-gradient(180deg,#071018,#061018)}
+.section-title{font-size:13px;color:var(--muted);margin-bottom:8px}
+.user-card{padding:8px;border-radius:8px;background:transparent;color:white;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.user-card:hover{background:rgba(255,255,255,0.02);cursor:pointer}
+
+/* modal */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.5)}
+.hidden{display:none}
+.modal-content{background:#0f1720;padding:16px;border-radius:10px;width:320px}
+.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
+.primary{background:var(--accent)}
